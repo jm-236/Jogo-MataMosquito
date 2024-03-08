@@ -2,7 +2,7 @@ body{
     background: url(imagens/bg.jpg) no-repeat;
 }
 
-.container{
+#container{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
