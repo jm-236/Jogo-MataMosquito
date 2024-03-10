@@ -18,23 +18,23 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body onresize="ajustaTamanho()">
-    <div id="container">
-        <img src="imagens/game.png" class="w-25" alt="">
 
-        <div class="form-group my-2">
-            <select class="form-control" id="dificuldade">
-                <option>Selecione uma dificuldade</option>
-                <option>Fácil</option>
-                <option>Médio</option>
-                <option>Difícil</option>
-            </select>
+    <div class="painel">
+        <div class="vidas">
+            <img id="v1" src="imagens/coracao_cheio.png" alt="">
+            <img id="v2" src="imagens/coracao_cheio.png" alt="">
+            <img id="v3" src="imagens/coracao_cheio.png" alt="">
         </div>
-
-        <button class="btn btn-danger" onclick="iniciarJogo()">Iniciar jogo</a>
+        <div class="cronometro">
+            <p>Tempo restante: ? segundos</p>
+        </div>
     </div>
 
-
-    
+    <script>
+        setInterval(function() {
+            gerarMosquito()
+        }, 1000);
+    </script>
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
