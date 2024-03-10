@@ -18,25 +18,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body onresize="ajustaTamanho()">
-
-    <div class="painel">
-        <div class="vidas">
-            <img id="v1" src="imagens/coracao_cheio.png" alt="">
-            <img id="v2" src="imagens/coracao_cheio.png" alt="">
-            <img id="v3" src="imagens/coracao_cheio.png" alt="">
-        </div>
-        <div class="cronometro">
-            <p id="tempo"></p>
-        </div>
+    <div id="container">
+        <img src="imagens/vitoria.png" class="m-0 w-25" alt="">
+        <a class="btn btn-dark btn-lg text-white" onclick="window.location.href = 'index.html'">Reiniciar</a>
     </div>
 
-    <script>
-        document.getElementById("tempo").innerHTML = `Tempo restante: ${tempo} segundos`
-        setInterval(function() {
-            gerarMosquito()
-            tempo--;
-        }, intervalo);
-    </script>
+
+    
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

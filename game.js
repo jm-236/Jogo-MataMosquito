@@ -21,9 +21,13 @@ function tamanhoAleatorio() {
 
 function iniciarJogo() {
     // início do jogo 
-    document.getElementById("container").style.display = "none"
     var dificuldade = document.getElementById("dificuldade").value
-    window.location.href = "jogo.html";
+    if (dificuldade === ""){
+        alert("Selecione um nível para iniciar o jogo.")
+        return false
+    } 
+
+    window.location.href = `jogo.html?${dificuldade}`;
 }
 
 function ladoAleatorio() {
@@ -31,12 +35,20 @@ function ladoAleatorio() {
 }
 
 function gerarMosquito() {
+    document.getElementById("tempo").innerHTML = `Tempo restante: ${tempo} segundos`
+    if (tempo == 0){
+        window.location.href = "vitoria.html"
+    }
+
     if (document.getElementById("mosquito")){
         document.getElementById("mosquito").remove()
         
-        if (vidas > 0){
+        if (vidas > 0){ // diminuição da vida do player
         document.getElementById(`v${vidas}`).src = "imagens/coracao_vazio.png"
         vidas--;
+        if (vidas == 0){
+            window.location.href = "gameover.html"
+        }
         }
     }
 
@@ -67,6 +79,23 @@ function gerarMosquito() {
 }
 
 // Definir altura e largura
-h = window.innerHeight
-l = window.innerWidth
+var h = window.innerHeight
+var l = window.innerWidth
 var vidas = 3
+var dificuldade = window.location.search
+dificuldade = dificuldade.replace("?", "")
+
+switch (dificuldade){
+    case "facil":
+        tempo = 30
+        intervalo = 2000
+        break
+    case "normal":
+        tempo = 60
+        intervalo = 1000
+        break
+    case "dificil":
+        tempo = 90
+        intervalo = 750
+        break
+}
