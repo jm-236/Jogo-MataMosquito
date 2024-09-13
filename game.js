@@ -74,9 +74,12 @@ function gerarMosquito() {
     mosquito.style.marginTop = `${coordY}px`
     mosquito.onclick = function(){
         this.remove()
+        // document.getElementById("tapa").play()
     }
     document.body.appendChild(mosquito)
 }
+
+
 
 // Definir altura e largura
 var h = window.innerHeight
@@ -99,3 +102,22 @@ switch (dificuldade){
         intervalo = 750
         break
 }
+
+
+document.addEventListener("click", function() {
+    audio = document.getElementById("tapa")
+    audio.currentTime = 0;  // Reinicia o áudio
+    audio.play();
+});
+
+
+window.onload = function() {
+    var audio = document.getElementById("barulhomosquito");
+    audio.muted = true;  // Inicia mudo
+    audio.play();
+    audio.loop = true;
+
+    setTimeout(function() {
+        audio.muted = false;  // Desmuta o áudio após um pequeno atraso
+    }, 1000);  // 1 segundo de atraso
+};

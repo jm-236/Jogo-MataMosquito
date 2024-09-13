@@ -31,6 +31,10 @@ body{
     font-weight: bold;
 }
 
+.audios{
+    display: none;
+}
+
 html{
     cursor: url(imagens/mata_mosca.png) 30 30, auto;
 }
